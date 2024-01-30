@@ -1,5 +1,4 @@
 import "../../App/styles.css"
-import "./styles.css"
 
 function Navbar() {
   return (
