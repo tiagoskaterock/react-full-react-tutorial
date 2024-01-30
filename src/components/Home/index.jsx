@@ -1,25 +1,23 @@
 import "../../App/styles.css"
 import './styles.css';
+import { useState } from 'react'
 
 function Home() {
 
-  function handleClick() {
-    alert('clicked')
-  } 
+  const [name, setName] = useState('Mario')
+  const [age, setAge] = useState(25)
 
-  function handleClickAgain(name) {
-    alert('Hello ' + name + '!')
+  function handleClick() {
+    setName('Luigi')
+    setAge(21)
   } 
 
   return (
     <div className="content">
-      <h1> Home Page </h1>
+      <h1>{ name } Home Page</h1>
+      <p>{ age } years old</p>
       <button onClick={ handleClick }>
         Click me
-      </button>
-
-      <button onClick={ () => { handleClickAgain('Tiago') } }>
-        Click me again
       </button>
     </div>
   )
