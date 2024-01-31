@@ -6,10 +6,15 @@ function Blog(props) {
 
   const [posts, setPosts] = useState(blog)
 
+  function handleDelete(id) {
+    const newPosts = posts.filter(post => post.id != id)
+    setPosts(newPosts)
+  }
+
   return (
     <>
       {posts.map(post => (
-        <Post post={ post } />
+        <Post post={ post } key={ post.id } handleDelete={handleDelete} />
       ))}
     </>
   )
@@ -17,5 +22,3 @@ function Blog(props) {
 }
 
 export default Blog;
-
-

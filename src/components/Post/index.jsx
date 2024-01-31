@@ -1,14 +1,15 @@
 import "../../App/styles.css"
 
 function Post(props) {
-  const post = props.post
+  const { post, handleDelete } = props;  
+
   return (
     <div 
-      key={post.id}
       className="blog-preview">
       <h2>{post.title}</h2>
       <p>{post.body}</p>
       <p><strong>Autor:</strong> {post.author}</p>
+      <button onClick={ () => handleDelete(post.id) }>Delete</button>
     </div>
   );
 };
