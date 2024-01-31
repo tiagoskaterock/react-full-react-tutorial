@@ -11,15 +11,24 @@ function Blog(props) {
     setPosts(newPosts)
   }
 
+  function handleName() {
+    setName('luigi')
+  }
+
+  const[name, setName] = useState('mario')
+
   useEffect(() => {
-    console.log(posts)
-  })
+    console.log('useEffect')
+    console.log(name)
+  }, [name])
 
   return (
     <>
+      <h1>{ name }</h1>
+      <button onClick={ () => setName('luigi') }>Click</button>
       {posts.map(post => (
         <Post post={ post } key={ post.id } handleDelete={handleDelete} />
-      ))}
+      ))}      
     </>
   )
 
