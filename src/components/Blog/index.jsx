@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { blog } from "./blogData"
 import Post from "../Post"
 
@@ -10,6 +10,10 @@ function Blog(props) {
     const newPosts = posts.filter(post => post.id != id)
     setPosts(newPosts)
   }
+
+  useEffect(() => {
+    console.log(posts)
+  })
 
   return (
     <>
